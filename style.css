@@ -1,0 +1,480 @@
+
+/* =================================
+   MSRDC LOGIN PAGE
+   Professional Enterprise Design
+================================= */
+
+/* 1. Global Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 2. Color Variables */
+
+:root {
+    --navy: #102A43;
+    --navy-light: #163B56;
+    --teal: #087F8C;
+    --teal-dark: #06636D;
+    --white: #FFFFFF;
+    --gray: #64748B;
+    --border: #CBD5E1;
+    --background: #F3F6FA;
+}
+
+
+/* 3. Body Styling */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        var(--navy),
+        var(--navy-light)
+    );
+
+    min-height: 100vh;
+}
+
+
+/* 4. Main Container */
+
+.login-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+}
+
+
+/* 5. Login Card */
+
+.login-card {
+    background: var(--white);
+
+    width: 100%;
+    max-width: 450px;
+
+    padding: 42px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    animation: fadeIn 0.6s ease;
+}
+
+
+/* 6. Branding Section */
+
+.brand-section {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+
+/* Logo */
+
+.logo {
+    width: 65px;
+    height: 65px;
+
+    background: var(--teal);
+    color: var(--white);
+
+    font-size: 32px;
+    font-weight: bold;
+
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 14px;
+}
+
+
+/* Brand Name */
+
+.brand-section h1 {
+    color: var(--navy);
+
+    font-size: 29px;
+    letter-spacing: 2px;
+}
+
+
+/* Brand Description */
+
+.brand-section p {
+    color: var(--gray);
+
+    font-size: 12px;
+    margin-top: 8px;
+
+    line-height: 1.5;
+}
+
+
+/* 7. Login Heading */
+
+.login-heading {
+    margin-bottom: 28px;
+}
+
+.login-heading h2 {
+    color: var(--navy);
+
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.login-heading p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+
+/* 8. Input Groups */
+
+.input-group {
+    margin-bottom: 21px;
+}
+
+
+/* Labels */
+
+.input-group label {
+    display: block;
+
+    color: #334155;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 9px;
+}
+
+
+/* Input Fields */
+
+.input-group input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+/* Input Focus */
+
+.input-group input:focus {
+    border-color: var(--teal);
+
+    box-shadow:
+        0 0 0 3px rgba(8, 127, 140, 0.12);
+}
+
+
+/* 9. Password Wrapper */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 65px;
+}
+
+
+/* Show/Hide Password */
+
+#togglePassword {
+    position: absolute;
+
+    right: 13px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: var(--teal);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#togglePassword:hover {
+    color: var(--teal-dark);
+}
+
+
+/* 10. Remember Me and Forgot Password */
+
+.form-options {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+    font-size: 13px;
+}
+
+
+/* Remember Me */
+
+.remember-option {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: #475569;
+
+    cursor: pointer;
+}
+
+.remember-option input {
+    accent-color: var(--teal);
+    cursor: pointer;
+}
+
+
+/* Forgot Password */
+
+.form-options a {
+    color: var(--teal);
+
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-options a:hover {
+    text-decoration: underline;
+}
+
+
+/* 11. Sign In Button */
+
+.login-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    background: var(--teal);
+    color: var(--white);
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Button Hover */
+
+.login-btn:hover {
+    background: var(--teal-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(8, 127, 140, 0.2);
+}
+
+
+/* Button Click */
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+
+/* 12. Validation Message */
+
+#message {
+    font-size: 13px;
+    font-weight: 500;
+
+    margin-top: 12px;
+
+    line-height: 1.5;
+    min-height: 20px;
+}
+
+
+/* 13. Footer */
+
+.footer-text {
+    text-align: center;
+
+    margin-top: 28px;
+
+    color: var(--gray);
+    font-size: 12px;
+}
+
+
+/* 14. Animation */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* 15. Responsive Design */
+
+@media screen and (max-width: 480px) {
+
+    .login-container {
+        padding: 20px 14px;
+    }
+
+    .login-card {
+        padding: 28px 22px;
+        border-radius: 14px;
+    }
+
+    .brand-section {
+        margin-bottom: 30px;
+    }
+
+    .brand-section h1 {
+        font-size: 25px;
+    }
+
+    .brand-section p {
+        font-size: 11px;
+    }
+
+    .login-heading h2 {
+        font-size: 22px;
+    }
+
+    .form-options {
+        font-size: 12px;
+    }
+
+}
+
+
+/* 16. Accessibility: Keyboard Focus */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid rgba(8, 127, 140, 0.35);
+    outline-offset: 3px;
+}
+
+/* Loading Button State */
+
+.login-btn:disabled {
+    background: #64748B;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.85;
+}
+
+/* =================================
+   FINAL CORPORATE UI POLISH
+================================= */
+
+/* Subtle background decoration */
+
+body {
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(8, 127, 140, 0.22),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(255, 255, 255, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #102A43,
+            #163B56
+        );
+}
+
+/* Smooth input transitions */
+
+.input-group input {
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+}
+
+/* Smooth link interactions */
+
+.form-options a {
+    transition: color 0.3s ease;
+}
+
+/* Improved button interaction */
+
+.login-btn {
+    transition: background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+
+.login-card {
+    transition: box-shadow 0.3s ease;
+}
+
+@media (hover: hover) {
+    .login-card:hover {
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.30);
+    }
+}
+
+
